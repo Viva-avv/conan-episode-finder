@@ -1,7 +1,7 @@
 {
   "name": "conan-episode-finder-backend",
   "version": "0.1.0",
-  "description": "Backend API untuk Conan Episode Finder (Express + SQLite)",
+  "description": "Backend API untuk Det Kudo (Express + SQLite)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

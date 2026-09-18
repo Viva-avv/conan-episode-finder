@@ -3,17 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conan Episode Finder</title>
+  <title>Det Kudo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Conan Episode Finder</h1>
+  <header class="app-header">
+    <h1>
+      <span class="sticker-icon tilt-left" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <circle cx="19" cy="19" r="13" fill="#e8b923" stroke="#2e2a24" stroke-width="3"/>
+          <circle cx="19" cy="19" r="8" fill="#fbf0d0" stroke="#2e2a24" stroke-width="2"/>
+          <ellipse cx="14.5" cy="14.5" rx="2.2" ry="3.6" fill="#fff" opacity="0.75" transform="rotate(-25 14.5 14.5)"/>
+          <rect x="27" y="27" width="7" height="16" rx="3.5" fill="#9c7148" stroke="#2e2a24" stroke-width="2.5" transform="rotate(45 30.5 35)"/>
+        </svg>
+      </span>
+      Det Kudo
+    </h1>
     <p>Cari episode Detective Conan berdasarkan irisan kemunculan karakter</p>
   </header>
 
   <main>
-    <!-- struktur UI (pencarian karakter, hasil episode) menyusul di iterasi berikutnya -->
+    <section class="search-card" aria-label="Form pencarian karakter">
+      <h2>Pilih 2–4 Karakter</h2>
+      <div id="character-slots" class="character-slots"></div>
+
+      <button id="add-character-btn" type="button" class="btn btn-secondary">
+        <span class="sticker-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="20" height="20">
+            <circle cx="16" cy="16" r="13" fill="#fbe9b8" stroke="#2e2a24" stroke-width="2.5"/>
+            <path d="M16 9v14M9 16h14" stroke="#2e2a24" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Tambah Karakter
+      </button>
+
+      <button id="search-btn" type="button" class="btn btn-primary">
+        <span class="sticker-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22">
+            <path d="M16 5c-7 0-11.5 5.5-11.5 12.5 0 4 1 6.5 2.2 8.7" fill="none" stroke="#2e2a24" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 8.3c-5.2 0-8.7 4.2-8.7 9.6 0 3.2.8 5.4 1.8 7.3" fill="none" stroke="#3a2c00" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 11.6c-3.4 0-5.9 2.8-5.9 6.5 0 2.4.6 4 1.4 5.5" fill="none" stroke="#2e2a24" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 15c-1.7 0-3 1.5-3 3.4 0 1.5.4 2.6 1 3.6" fill="none" stroke="#3a2c00" stroke-width="2" stroke-linecap="round"/>
+            <path d="M20.2 8.3c1.7 2.2 2.5 5.1 2.5 8.9 0 3.4-.7 6-1.8 8.2" fill="none" stroke="#2e2a24" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Cari Episode
+      </button>
+
+      <p id="form-message" class="form-message" role="alert"></p>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
   </main>
 
   <script src="js/script.js"></script>
