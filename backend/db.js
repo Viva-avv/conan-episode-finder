@@ -12,4 +12,8 @@ db.pragma('foreign_keys = ON');
 const schema = fs.readFileSync(SCHEMA_PATH, 'utf8');
 db.exec(schema);
 
+// isi data contoh otomatis kalau db masih kosong (fresh data.sqlite)
+const { seedIfEmpty } = require('./seed');
+seedIfEmpty(db);
+
 module.exports = db;
